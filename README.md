@@ -1,21 +1,5 @@
-IncrementalRPG
-==============
+IncrementalRPG KO edition
+=========================
 
-Incremental Game with the goal of growing and growing as much as possible.
-
-The original game can be played here: http://cdpn.io/AybpC
-
-Project Page: http://samjb2.github.io/IncrementalRPG/
-
-==============
-
-<h3>Our Goals</h3>
-<ul>
-  <li>Alter the style to better suit the theme.</li>
-  <li>More types of accommodation.</li>
-  <li>More buildings.</li>
-  <li>More Upgrades</li>
-  <li>Graphics and icons.</li>
-</ul>
-
+This is a KnockoutJS (KO) port of [samjb2's Incremental RPG] (https://github.com/samjb2/IncrementalRPG).
 
