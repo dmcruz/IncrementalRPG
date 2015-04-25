@@ -127,7 +127,7 @@ function RPGViewModel()  {
                 increment(self.worker.amount);
                 increment(self.miner.amount);
                 increment(self.miner.cost);
-                increment(self.stone.increment, self.miner.amount());
+                add(self.stone.increment, self.miner.amount());
             } else {
                 $("#info").prepend($('<p>You need more self.food.</p>').fadeIn('slow'));
             }
@@ -142,7 +142,7 @@ function RPGViewModel()  {
                 increment(self.worker.amount);
                 increment(self.hunter.amount);
                 increment(self.hunter.cost);
-                increment(self.food.increment, self.hunter.amount);
+                add(self.food.increment, self.hunter.amount());
             } else {
                 $("#info").prepend($('<p>You need more self.food.</p>').fadeIn('slow'));
             }
@@ -202,13 +202,11 @@ function RPGViewModel()  {
 	}
 	self.buildHostel = function() {
         if (self.wood.amount() >= self.hostel.costWood() && self.stone.amount() >= self.hostel.costStone()) {
-            self.wood.amount() = self.wood.amount() - self.hostel.costWood();
-            self.stone.amount() = self.stone.amount() - self.hostel.costStone();
-            self.hostel.amount()++;
-            self.hostel.costWood() = self.hostel.costWood() * 1.2;
-            self.hostel.costStone() = self.hostel.costStone() * 1.2;
-            self.hostel.costWood() = self.hostel.cost.self.wood.toFixed(0);
-            self.hostel.costStone() = self.hostel.cost.self.stone.toFixed(0);
+            subtr(self.wood.amount, self.hostel.costWood);
+            subtr(self.stone.amount, self.hostel.costStone);
+            increment(self.hostel.amount);
+            multi(self.hostel.costWood, 1.2);
+            multi(self.hostel.costStone, 1.2);
             add(self.maxPop, self.hostel.residents());
         } else {
             $("#info").prepend($('<p>You need more building materials.</p>').fadeIn('slow'));

@@ -35,9 +35,9 @@
                     <p>This is an open source project with the goal of creating the BEST incremental game in the world, ever!</p>
                     <p>Join in and help make this game awesome on <a href="https://github.com/samjb2/IncrementalRPG">GitHub</a>.</p>
                     <h3>Name Your Town:</h3>
-                    <input class="form-control" id="town" type="text" data-bind="value: $root.town">
+                    <input class="form-control" id="town" type="text" data-bind="value: town">
                     <h3>Name Your Mayor:</h3>
-                    <input class="form-control" id="mayor" type="text" data-bind="value: $root.mayor">
+                    <input class="form-control" id="mayor" type="text" data-bind="value: mayor">
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="modalClose" class="btn btn-success" data-dismiss="modal" onmousedown='return false;'>Done</button>
@@ -56,11 +56,11 @@
     <div class="row">
         <div class="col-md-12">
             <h2>
-                <span id="townName" data-bind="text: $root.town"></span>
+                <span id="townName" data-bind="text: town"></span>
             </h2>
             <h3>
                 <small>Our Beloved Mayor:</small>
-                <span id="mayorName" data-bind="text: $root.mayor"></span>
+                <span id="mayorName" data-bind="text: mayor"></span>
             </h3>
         </div>
     </div>
@@ -77,17 +77,17 @@
 
                 <div class="row">
                     <div class="col-xs-4">
-                        <button type="button" id="chopWood" class="btn btn-primary btn-block" onmousedown='return false;' data-bind="click: $root.chopWood">Chop Wood</button>
+                        <button type="button" id="chopWood" class="btn btn-primary btn-block" onmousedown='return false;' data-bind="click: chopWood">Chop Wood</button>
                     </div>
                     <div class="col-xs-4">
                         <button class="btn btn-default btn-block disabled">
-                            <span id="woodAmount" data-bind="text: $root.wood.amount">0</span> /
-                            <span id="maxWood" data-bind="text: $root.wood.max">0</span>
+                            <span id="woodAmount" data-bind="text: wood.amount">0</span> /
+                            <span id="maxWood" data-bind="text: wood.max">0</span>
                         </button>
                     </div>
                     <div class="col-xs-4">
                         <span class="btn btn-default btn-block disabled">
-                            <span id="woodIncrement" data-bind="text: $root.wood.increment">0</span>
+                            <span id="woodIncrement" data-bind="text: wood.increment">0</span>
                             <span>/ 5s</span>
                         </span>
                     </div>
@@ -96,17 +96,17 @@
 
                 <div class="row">
                     <div class="col-xs-4">
-                        <button type="button" id="mineStone" class="btn btn-primary btn-block" onmousedown='return false;' data-bind="click: $root.mineStone">Mine Stone</button>
+                        <button type="button" id="mineStone" class="btn btn-primary btn-block" onmousedown='return false;' data-bind="click: mineStone">Mine Stone</button>
                     </div>
                     <div class="col-xs-4">
                         <button class="btn btn-default btn-block disabled">
-                            <span id="stoneAmount" data-bind="text: $root.stone.amount">0</span> /
-                            <span id="maxStone" data-bind="text: $root.stone.max">0</span>
+                            <span id="stoneAmount" data-bind="text: stone.amount">0</span> /
+                            <span id="maxStone" data-bind="text: stone.max">0</span>
                         </button>
                     </div>
                     <div class="col-xs-4">
                         <span class="btn btn-default btn-block disabled">
-                            <span id="stoneIncrement" data-bind="text: $root.stone.increment">0</span>
+                            <span id="stoneIncrement" data-bind="text: stone.increment">0</span>
                             <span>/ 5s</span>
                         </span>
                     </div>
@@ -115,17 +115,17 @@
 
                 <div class="row">
                     <div class="col-xs-4">
-                        <button type="button" id="gatherFood" class="btn btn-primary btn-block" onmousedown='return false;' data-bind="click: $root.harvestFood">Gather Food</button>
+                        <button type="button" id="gatherFood" class="btn btn-primary btn-block" onmousedown='return false;' data-bind="click: harvestFood">Gather Food</button>
                     </div>
                     <div class="col-xs-4">
                         <button class="btn btn-default btn-block disabled">
-                            <span id="foodAmount" data-bind="text: $root.food.amount">0</span> /
-                            <span id="maxFood" data-bind="text: $root.food.max">0</span>
+                            <span id="foodAmount" data-bind="text: food.amount">0</span> /
+                            <span id="maxFood" data-bind="text: food.max">0</span>
                         </button>
                     </div>
                     <div class="col-xs-4">
                         <span class="btn btn-default btn-block disabled">
-                            <span id="foodIncrement" data-bind="text: $root.food.increment">0</span>
+                            <span id="foodIncrement" data-bind="text: food.increment">0</span>
                             <span>/ 5s</span>
                         </span>
                     </div>
@@ -146,13 +146,13 @@
                     <div class="col-xs-6">
                         <div class="btn-group btn-group-justified">
                             <span class="btn btn-default disabled">Population</span>
-                            <span id="workerAmount" class="btn btn-default disabled" data-bind="text: $root.worker.amount">0</span>
+                            <span id="workerAmount" class="btn btn-default disabled" data-bind="text: worker.amount">0</span>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="btn-group btn-group-justified">
                             <span class="btn btn-default disabled">Max</span>
-                            <span id="maxPop" class="btn btn-default disabled" data-bind="text: $root.maxPop">0</span>
+                            <span id="maxPop" class="btn btn-default disabled" data-bind="text: maxPop">0</span>
                         </div>
                     </div>
                 </div>
@@ -163,11 +163,11 @@
                         <button type="button" id="createLumberjack" class="btn btn-block btn-success" onmousedown='return false;' data-bind="click: createLumberjack">Create Lumberjack</button>
                     </div>
                     <div class="col-xs-4">
-                        <button type="button" id="lumberjackAmount" class="btn btn-block btn-default disabled" data-bind="text: $root.lumberjack.amount">0</button>
+                        <button type="button" id="lumberjackAmount" class="btn btn-block btn-default disabled" data-bind="text: lumberjack.amount">0</button>
                     </div>
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="lumberjackCost" data-bind="text: $root.lumberjack.cost">10</span> Food</h6>
+                            <span id="lumberjackCost" data-bind="text: lumberjack.cost">10</span> Food</h6>
                         <h6>+1 Lumberjack</h6>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="minerCost" data-bind="text: $root.miner.cost">10</span> Food</h6>
+                            <span id="minerCost" data-bind="text: miner.cost">10</span> Food</h6>
                         <h6>+1 Miner</h6>
                     </div>
                 </div>
@@ -193,11 +193,11 @@
                         <button type="button" id="createHunter" class="btn btn-block btn-success" onmousedown='return false;' data-bind="click: createHunter">Create Hunter</button>
                     </div>
                     <div class="col-xs-4">
-                        <button type="button" id="hunterAmount" class="btn btn-block btn-default disabled" data-bind="text: $root.hunter.amount">0</button>
+                        <button type="button" id="hunterAmount" class="btn btn-block btn-default disabled" data-bind="text: hunter.amount">0</button>
                     </div>
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="hunterCost" data-bind="text: $root.hunter.cost">10</span> Food</h6>
+                            <span id="hunterCost" data-bind="text: hunter.cost">10</span> Food</h6>
                         <h6>+1 Hunter</h6>
                     </div>
                 </div>
@@ -223,14 +223,14 @@
                     </div>
 
                     <div class="col-xs-4">
-                        <button type="button" id="tentAmount" class="btn btn-default btn-block disabled" data-bind="text: $root.tent.amount">0</button>
+                        <button type="button" id="tentAmount" class="btn btn-default btn-block disabled" data-bind="text: tent.amount">0</button>
                     </div>
 
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="tentCostWood" data-bind="text: $root.tent.costWood">0</span> Wood</h6>
+                            <span id="tentCostWood" data-bind="text: tent.costWood">0</span> Wood</h6>
                         <h6>+
-                            <span id="tentResidents" data-bind="text: $root.tent.residents">0</span> Population</h6>
+                            <span id="tentResidents" data-bind="text: tent.residents">0</span> Population</h6>
                     </div>
                 </div>
                 <!--.row-->
@@ -240,14 +240,14 @@
                         <button type="button" id="buildHouse" class="btn btn-danger btn-block" onmousedown='return false;' data-bind="click: buildHouse">Build House</button>
                     </div>
                     <div class="col-xs-4">
-                        <button type="button" id="houseAmount" class="btn btn-default btn-block disabled" data-bind="text: $root.house.amount">0</button>
+                        <button type="button" id="houseAmount" class="btn btn-default btn-block disabled" data-bind="text: house.amount">0</button>
                     </div>
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="houseCostWood" data-bind="text: $root.house.costWood">0</span> Wood | -
-                            <span id="houseCostStone" data-bind="text: $root.house.costStone">0</span> Stone</h6>
+                            <span id="houseCostWood" data-bind="text: house.costWood">0</span> Wood | -
+                            <span id="houseCostStone" data-bind="text: house.costStone">0</span> Stone</h6>
                         <h6>+
-                            <span id="houseResidents" data-bind="text: $root.house.residents">0</span> Population</h6>
+                            <span id="houseResidents" data-bind="text: house.residents">0</span> Population</h6>
                     </div>
                 </div>
                 <!--.row-->
@@ -264,12 +264,12 @@
                     </div>
 
                     <div class="col-xs-4">
-                        <button type="button" id="hostelAmount" class="btn btn-default btn-block disabled" data-bind="text: $root.hostel.amount">0</button>
+                        <button type="button" id="hostelAmount" class="btn btn-default btn-block disabled" data-bind="text: hostel.amount">0</button>
                     </div>
                     <div class="col-xs-4">
                         <h6 class="hostelInfo hidden">-
-                            <span id="hostelCostWood" data-bind="text: $root.hostel.costWood">0</span> Wood | -
-                            <span id="hostelCostStone" data-bind="text: $root.hostel.costStone">0</span> Stone</h6>
+                            <span id="hostelCostWood" data-bind="text: hostel.costWood">0</span> Wood | -
+                            <span id="hostelCostStone" data-bind="text: hostel.costStone">0</span> Stone</h6>
                         <h6 class="hostelResearchInfo">-400 Wood | -150 Stone</h6>
                         <h6>+
                             <span id="hostelResidents">0</span> Population</h6>
@@ -287,12 +287,12 @@
                         <button type="button" id="buildWoodStorage" class="btn btn-danger btn-block" onmousedown='return false;' data-bind="click: buildWoodStorage">Build Wood Storage</button>
                     </div>
                     <div class="col-xs-4">
-                        <button type="button" id="woodStorageAmount" class="btn btn-default btn-block disabled" data-bind="text: $root.wood.storageAmount">0</button>
+                        <button type="button" id="woodStorageAmount" class="btn btn-default btn-block disabled" data-bind="text: wood.storageAmount">0</button>
                     </div>
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="woodStorageCostWood" data-bind="text: $root.wood.storageCostWood">0</span> Wood | -
-                            <span id="woodStorageCostStone" data-bind="text: $root.wood.storageCostStone">0</span> Stone</h6>
+                            <span id="woodStorageCostWood" data-bind="text: wood.storageCostWood">0</span> Wood | -
+                            <span id="woodStorageCostStone" data-bind="text: wood.storageCostStone">0</span> Stone</h6>
                         <h6>+100 Wood Storage</h6>
                     </div>
                 </div>
@@ -303,12 +303,12 @@
                         <button type="button" id="buildStoneStorage" class="btn btn-danger btn-block" onmousedown='return false;' data-bind="click: buildStoneStorage">Build Stone Storage</button>
                     </div>
                     <div class="col-xs-4">
-                        <button type="button" id="stoneStorageAmount" class="btn btn-default btn-block disabled" data-bind="text: $root.stone.storageAmount">0</button>
+                        <button type="button" id="stoneStorageAmount" class="btn btn-default btn-block disabled" data-bind="text: stone.storageAmount">0</button>
                     </div>
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="stoneStorageCostWood" data-bind="text: $root.stone.storageCostWood">0</span> Wood | -
-                            <span id="stoneStorageCostStone" data-bind="text: $root.stone.storageCostStone">0</span> Stone</h6>
+                            <span id="stoneStorageCostWood" data-bind="text: stone.storageCostWood">0</span> Wood | -
+                            <span id="stoneStorageCostStone" data-bind="text: stone.storageCostStone">0</span> Stone</h6>
                         <h6>+100 Stone Storage</h6>
                     </div>
                 </div>
@@ -319,12 +319,12 @@
                         <button type="button" id="buildFoodStorage" class="btn btn-danger btn-block" onmousedown='return false;' data-bind="click: buildFoodStorage">Build Food Storage</button>
                     </div>
                     <div class="col-xs-4">
-                        <button type="button" id="foodStorageAmount" class="btn btn-default btn-block disabled" data-bind="text: $root.food.storageAmount">0</button>
+                        <button type="button" id="foodStorageAmount" class="btn btn-default btn-block disabled" data-bind="text: food.storageAmount">0</button>
                     </div>
                     <div class="col-xs-4">
                         <h6>-
-                            <span id="foodStorageCostWood" data-bind="text: $root.food.storageCostWood">0</span> Wood | -
-                            <span id="foodStorageCostStone" data-bind="text: $root.food.storageCostStone">0</span> Stone</h6>
+                            <span id="foodStorageCostWood" data-bind="text: food.storageCostWood">0</span> Wood | -
+                            <span id="foodStorageCostStone" data-bind="text: food.storageCostStone">0</span> Stone</h6>
                         <h6>+100 Food Storage</h6>
                     </div>
                 </div>
